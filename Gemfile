@@ -36,3 +36,5 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'debugger'
+
+gem 'react_on_rails', '~> 2.0.0.rc.3'
