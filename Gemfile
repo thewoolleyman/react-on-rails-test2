@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'react_on_rails', '~> 2.0.0.rc.3'
+
 gem 'rails', '3.2.22'
 
 # Bundle edge Rails instead:
@@ -37,4 +39,18 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'debugger'
 
-gem 'react_on_rails', '~> 2.0.0.rc.3'
+gem 'therubyracer', platforms: :ruby
+
+# require: false is necessary for the linters as we only want them loaded
+# when used by the linting rake tasks.
+group :development do
+  gem("rubocop", require: false)
+  gem("ruby-lint", require: false)
+  gem("scss_lint", require: false)
+end
+
+# For Heroku deployment
+gem 'rails_12factor', group: :production
+gem 'puma', group: :production
+
+gem 'bootstrap-sass', '~> 3.1.1'
